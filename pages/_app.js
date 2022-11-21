@@ -24,6 +24,9 @@ import { DebugPanel } from '@/components/DebugPanel'
 import { ThemeSwitch } from '@/components/ThemeSwitch'
 import { Fireworks } from '@/components/Fireworks'
 
+// Vercel Analytics
+import { Analytics } from '@vercel/analytics/react'
+
 const Ackee = dynamic(() => import('@/components/Ackee'), { ssr: false })
 const Gtag = dynamic(() => import('@/components/Gtag'), { ssr: false })
 const Busuanzi = dynamic(() => import('@/components/Busuanzi'), { ssr: false })
@@ -45,6 +48,7 @@ const MyApp = ({ Component, pageProps }) => {
         {BLOG.ADSENSE_GOOGLE_ID && <GoogleAdsense />}
         {BLOG.FACEBOOK_APP_ID && BLOG.FACEBOOK_PAGE_ID && <Messenger />}
         {JSON.parse(BLOG.FIREWORKS) && <Fireworks/>}
+        {<Analytics />}
     </>
 
   return (
