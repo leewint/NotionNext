@@ -63,12 +63,12 @@ const MyApp = ({ Component, pageProps }) => {
   useEffect(() => {
     AOS.init()
     smoothscroll.polyfill()
-  })
+  }, [])
 
   return (
         <GlobalContextProvider>
-            {externalPlugins}
             <Component {...pageProps} />
+            {externalPlugins}
         </GlobalContextProvider>
   )
 }
