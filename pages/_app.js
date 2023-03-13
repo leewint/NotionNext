@@ -24,6 +24,7 @@ import smoothscroll from 'smoothscroll-polyfill'
 
 import AOS from 'aos'
 import 'aos/dist/aos.css' // You can also use <link> for styles
+import { isMobile } from '@/lib/utils'
 
 // Vercel Analytics
 import { Analytics } from '@vercel/analytics/react'
@@ -62,7 +63,9 @@ const MyApp = ({ Component, pageProps }) => {
 
   useEffect(() => {
     AOS.init()
-    smoothscroll.polyfill()
+    if (isMobile()) {
+      smoothscroll.polyfill()
+    }
   }, [])
 
   return (
