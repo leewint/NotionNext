@@ -8,18 +8,10 @@ import TagItemMini from './TagItemMini'
  * @param {*} param0
  * @returns
  */
-export const BlogPostCardInfo = ({ index, post, showPreview, showPageCover, showSummary }) => {
-  const delay = (index % 2) * 200
+export const BlogPostCardInfo = ({ post, showPreview, showPageCover, showSummary }) => {
+  return <div className={`flex flex-col justify-between lg:p-6 p-4  ${showPageCover && !showPreview ? 'md:w-7/12 w-full h-56 md:max-h-60 ' : 'w-full '}`}>
 
-  return <div
-            data-aos="fade-up"
-            data-aos-duration="200"
-            data-aos-delay={delay}
-            data-aos-once="true"
-            data-aos-anchor-placement="top-bottom"
-            className={`h-56 flex flex-col justify-between lg:p-6 p-4 md:max-h-60 ${showPageCover ? 'md:w-7/12 w-full ' : 'w-full'}`}>
        <div>
-
          {/* 标题 */}
          <Link
             href={`${BLOG.SUB_PATH}/${post.slug}`}
@@ -49,15 +41,14 @@ export const BlogPostCardInfo = ({ index, post, showPreview, showPageCover, show
 
           {/* 摘要 */}
           {(!showPreview || showSummary) && !post.results && (
-            <p style={{ overflow: 'hidden', textOverflow: 'ellipsis', display: '-webkit-box', WebkitLineClamp: '3', WebkitBoxOrient: 'vertical' }}
-                className="replace my-3 text-gray-700  dark:text-gray-300 text-sm font-light leading-7">
+            <p className="two-line-clamp replace my-3 text-gray-700  dark:text-gray-300 text-sm font-light leading-7">
                 {post.summary}
             </p>
           )}
 
         {/* 搜索结果 */}
         {post.results && (
-            <p className="mt-4 text-gray-700 dark:text-gray-300 text-sm font-light leading-7">
+            <p className="two-line-clamp mt-4 text-gray-700 dark:text-gray-300 text-sm font-light leading-7">
                 {post.results.map(r => (
                     <span key={r}>{r}</span>
                 ))}
@@ -87,7 +78,7 @@ export const BlogPostCardInfo = ({ index, post, showPreview, showPageCover, show
             <div className="md:flex-nowrap flex-wrap md:justify-start inline-block">
                 <div>
                     {' '}
-                    {post.tagItems.map(tag => (
+                    {post.tagItems?.map(tag => (
                         <TagItemMini key={tag.name} tag={tag} />
                     ))}
                 </div>
