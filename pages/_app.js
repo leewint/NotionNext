@@ -22,7 +22,6 @@ import { StarrySky } from '@/components/StarrySky'
 import MusicPlayer from '@/components/MusicPlayer'
 import ExternalScript from '@/components/ExternalScript'
 import smoothscroll from 'smoothscroll-polyfill'
-import { Analytics } from '@vercel/analytics/react'
 
 import AOS from 'aos'
 import 'aos/dist/aos.css' // You can also use <link> for styles
