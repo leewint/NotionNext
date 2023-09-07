@@ -84,16 +84,16 @@ if __name__ == '__main__':
             # 判断当前urls数量是否超过额度，若超过则取当日最大值，默认为100，可根据实际情况修改
             if len(urls) > BING_QUOTA:
                 bing_urls = random.sample(urls, BING_QUOTA)
-            else
+            else:
                 bing_urls = urls
             # 推送bing
             if args.bing_api_key:
                 print('正在推送至必应，请稍后……')
                 push_to_bing(args.url, bing_urls, args.bing_api_key)
-                
+
             if len(urls) > BAIDU_QUOTA:
                 baidu_urls = random.sample(urls, BAIDU_QUOTA)
-            else
+            else:
                 baidu_urls = urls
             # 推送百度
             if args.baidu_token:
