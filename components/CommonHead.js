@@ -28,6 +28,7 @@ const CommonHead = ({ meta, children }) => {
                     content={BLOG.SEO_GOOGLE_SITE_VERIFICATION}
                 />
             )}
+            {BLOG.SEO_BING_SITE_VERIFICATION && (<meta name="msvalidate.01" content={BLOG.SEO_BING_SITE_VERIFICATION} />)}
             {BLOG.SEO_BAIDU_SITE_VERIFICATION && (<meta name="baidu-site-verification" content={BLOG.SEO_BAIDU_SITE_VERIFICATION} />)}
             <meta name="keywords" content={keywords} />
             <meta name="description" content={description} />

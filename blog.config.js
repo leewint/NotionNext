@@ -329,9 +329,12 @@ const BLOG = {
 
   SEO_GOOGLE_SITE_VERIFICATION:
         process.env.NEXT_PUBLIC_SEO_GOOGLE_SITE_VERIFICATION || '', // Remove the value or replace it with your own google site verification code
+  
+  SEO_BING_SITE_VERIFICATION:
+        process.env.NEXT_PUBLIC_SEO_BING_SITE_VERIFICATION || 'D07CAFD5A8EF444D7C58F71A79353088', // Remove the value or replace it with your own bing site verification code
 
   SEO_BAIDU_SITE_VERIFICATION:
-        process.env.NEXT_PUBLIC_SEO_BAIDU_SITE_VERIFICATION || 'codeva-LSEGU34zwR', // Remove the value or replace it with your own google site verification code
+        process.env.NEXT_PUBLIC_SEO_BAIDU_SITE_VERIFICATION || 'codeva-LSEGU34zwR', // Remove the value or replace it with your own baidu site verification code
 
   // <---- 站点统计
 
