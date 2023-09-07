@@ -11,7 +11,7 @@ import WebWhiz from './Webwhiz'
 // import { Ribbon } from '@/components/Ribbon'
 // import { Sakura } from '@/components/Sakura'
 // import { StarrySky } from '@/components/StarrySky'
-import { Analytics } from '@vercel/analytics/react'
+// import { Analytics } from '@vercel/analytics/react'
 
 const TwikooCommentCounter = dynamic(() => import('@/components/TwikooCommentCounter'), { ssr: false })
 const DebugPanel = dynamic(() => import('@/components/DebugPanel'), { ssr: false })
@@ -22,7 +22,7 @@ const FlutteringRibbon = dynamic(() => import('@/components/FlutteringRibbon'), 
 const Ribbon = dynamic(() => import('@/components/Ribbon'), { ssr: false })
 const Sakura = dynamic(() => import('@/components/Sakura'), { ssr: false })
 const StarrySky = dynamic(() => import('@/components/StarrySky'), { ssr: false })
-// const Analytics = dynamic(() => import('@vercel/analytics/react').then(async (m) => { return m.Analytics }), { ssr: false })
+const Analytics = dynamic(() => import('@vercel/analytics/react').then(async (m) => { return m.Analytics }), { ssr: false })
 const MusicPlayer = dynamic(() => import('@/components/Player'), { ssr: false })
 const Ackee = dynamic(() => import('@/components/Ackee'), { ssr: false })
 const Gtag = dynamic(() => import('@/components/Gtag'), { ssr: false })
