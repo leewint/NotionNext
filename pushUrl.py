@@ -10,7 +10,8 @@ ssl._create_default_https_context = ssl._create_unverified_context
 
 
 # 每日推送限额，可根据实际情况修改
-QUOTA = 100
+BING_QUOTA = 10
+BAIDU_QUOTA = 100
 
 
 def parse_stiemap(site):
@@ -81,16 +82,23 @@ if __name__ == '__main__':
         urls = parse_stiemap(args.url)
         if urls is not None:
             # 判断当前urls数量是否超过额度，若超过则取当日最大值，默认为100，可根据实际情况修改
-            if len(urls) > QUOTA:
-                urls = random.sample(urls, QUOTA)
+            if len(urls) > BING_QUOTA:
+                bing_urls = random.sample(urls, BING_QUOTA)
+            else
+                bing_urls = urls
             # 推送bing
             if args.bing_api_key:
                 print('正在推送至必应，请稍后……')
-                push_to_bing(args.url, urls, args.bing_api_key)
+                push_to_bing(args.url, bing_urls, args.bing_api_key)
+                
+            if len(urls) > BAIDU_QUOTA:
+                baidu_urls = random.sample(urls, BAIDU_QUOTA)
+            else
+                baidu_urls = urls
             # 推送百度
             if args.baidu_token:
                 print('正在推送至百度，请稍后……')
-                push_to_baidu(args.url, urls, args.baidu_token)
+                push_to_baidu(args.url, baidu_urls, args.baidu_token)
     else:
         print('请前往 Github Action Secrets 配置 URL')
         print('详情参见: https://ghlcode.cn/fe032806-5362-4d82-b746-a0b26ce8b9d9')
