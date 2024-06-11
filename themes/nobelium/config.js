@@ -1,5 +1,4 @@
 const CONFIG = {
-
   NOBELIUM_NAV_NOTION_ICON: true, // 是否读取Notion图标作为站点头像 ; 否则默认显示黑色SVG方块
 
   // 特殊菜单
@@ -13,5 +12,6 @@ const CONFIG = {
   NOBELIUM_MENU_SEARCH: false, // 显示搜索
   NOBELIUM_MENU_RSS: false // 显示订阅
 
+  NOBELIUM_AUTO_COLLAPSE_NAV_BAR: true // 页头导航栏动画
 }
 export default CONFIG
