@@ -20,7 +20,7 @@ const CONFIG = {
   HEXO_MENU_CATEGORY: true, // 显示分类
   HEXO_MENU_TAG: true, // 显示标签
   HEXO_MENU_ARCHIVE: true, // 显示归档
-  HEXO_MENU_SEARCH: true, // 显示搜索
+  HEXO_MENU_SEARCH: false, // 显示搜索
   HEXO_MENU_RANDOM: true, // 显示随机跳转按钮
 
   HEXO_POST_LIST_COVER: true, // 列表显示文章封面
@@ -35,10 +35,10 @@ const CONFIG = {
   HEXO_ARTICLE_COPYRIGHT: true, // 显示文章版权声明
   HEXO_ARTICLE_RECOMMEND: true, // 文章关联推荐
 
-  HEXO_WIDGET_LATEST_POSTS: true, // 显示最新文章卡
+  HEXO_WIDGET_LATEST_POSTS: false, // 显示最新文章卡
   HEXO_WIDGET_ANALYTICS: true, // 显示统计卡
   HEXO_WIDGET_TO_TOP: true,
-  HEXO_WIDGET_TO_COMMENT: true, // 跳到评论区
+  HEXO_WIDGET_TO_COMMENT: false, // 跳到评论区
   HEXO_WIDGET_DARK_MODE: true, // 夜间模式
   HEXO_WIDGET_TOC: true // 移动端悬浮目录
 }
